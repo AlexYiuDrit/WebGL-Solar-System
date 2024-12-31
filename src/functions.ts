@@ -58,12 +58,6 @@ export function createProgram(gl: WebGL2RenderingContext,
 	gl.deleteProgram(program);
 }
 
-export function resizeCanvas(gl: WebGL2RenderingContext, canvas: HTMLCanvasElement) {
-	canvas.width = canvas.clientWidth * devicePixelRatio;
-	canvas.height = canvas.clientHeight * devicePixelRatio;
-	gl.viewport(0, 0, canvas.width, canvas.height);
-}
-
 export const getCirclePoints = (sector: number): number[] => {
 	const vertices: number[] = [];
 	for (let i = 0; i <= sector; i++) {

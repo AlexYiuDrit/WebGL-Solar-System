@@ -1,5 +1,5 @@
 import { fragmentShaderSourceCode, vertexShaderSourceCode } from "./glsl";
-import { createOrbitStarVAO, createProgram, createShader, createSphereList, createStarVertices, createStaticVertexBuffer, getCirclePoints, getContext, resizeCanvas, showError } from "./functions";
+import { createOrbitStarVAO, createProgram, createShader, createSphereList, createStarVertices, createStaticVertexBuffer, getCirclePoints, getContext, showError } from "./functions";
 import { glMatrix, mat4, vec3 } from "gl-matrix";
 import { Sphere } from "./sphere";
 import { STAR_DATA, PLANET_DATA, MOON_DATA } from "../data/sphereData";
@@ -113,6 +113,7 @@ function render() {
 
         canvas.width = canvas.clientWidth;
         canvas.height = canvas.clientHeight;
+        gl.viewport(0, 0, canvas.width, canvas.height);
         gl.clearColor(0.02, 0.02, 0.02, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         gl.enable(gl.DEPTH_TEST);
