@@ -111,15 +111,14 @@ function render() {
         const matViewProj = mat4.create();
         mat4.multiply(matViewProj, matProj, matView);
 
-        canvas.width = canvas.clientWidth * devicePixelRatio;
-        canvas.height = canvas.clientHeight * devicePixelRatio;
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
         gl.clearColor(0.02, 0.02, 0.02, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         gl.enable(gl.DEPTH_TEST);
         gl.enable(gl.CULL_FACE);
         gl.cullFace(gl.BACK);
         gl.frontFace(gl.CCW);
-        resizeCanvas(gl, canvas);
 
         gl.useProgram(program);
 
