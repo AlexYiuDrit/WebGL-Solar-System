@@ -1,3 +1,8 @@
-This is the project of COMP4422 with PolyU StudentID 20042573D
+# WebGL Solar System Model
 
-https://alexyiudrit.github.io/COMP4422_Project/
+a WebGL demo of the 3D solar system model, developed by plain Typescript with glMatrix only - No React, three.js or compilation needed.
+
+## Demo
+[![screenshot.png](https://alexyiudrit.github.io/WebGL-Solar-System/screenshot.png)]
+
+[Click to launch](https://alexyiudrit.github.io/WebGL-Solar-System/)
