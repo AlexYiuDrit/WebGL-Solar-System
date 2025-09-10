@@ -36,7 +36,11 @@ Data is stored in TypeScript to bypass browser CORS restrictions, with scaled un
   z = r * sin(ϕ)
   ```
 ![screenshot.jpg](https://alexyiudrit.github.io/WebGL-Solar-System/sector.png)
-  Where θ = 2π * i / sectorCount, ϕ = π/2 - π * j / stackCount. Triangulated with indices for two triangles per sector (k1 → k2 → k1+1, k1+1 → k2 → k2+1). Normals = position / radius.
+  ```
+  Where θ = 2π * i / sectorCount, ϕ = π/2 - π * j / stackCount. 
+  Triangulated with indices for two triangles per sector (k1 → k2 → k1+1, k1+1 → k2 → k2+1)
+  Normals = position / radius
+  ```
 - **Orbital Movement**: In `Sphere.draw()`:
   - Update `orbitAngle += orbitSpeed * dt` (dt in simulation days).
   - Position:
@@ -59,7 +63,7 @@ Data is stored in TypeScript to bypass browser CORS restrictions, with scaled un
 
 - **View Matrix**: `mat4.lookAt(cameraPos, target, up=[0,1,0.5])` for tilted view.
 - **Projection**: `mat4.perspective(fovy, aspect, near, far)` fovy adjusts on mouse wheel for zoom.
-- **Combined**: `matViewProj = matProj * matView` passed as uniform.
+- **Combined**: `matViewProj = matProj * matView`; passed as uniform.
 
 ### Lighting
 
