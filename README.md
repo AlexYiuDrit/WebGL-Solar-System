@@ -59,7 +59,7 @@ Data is stored in TypeScript to bypass browser CORS restrictions, with scaled un
 
 - **View Matrix**: `mat4.lookAt(cameraPos, target, up=[0,1,0.5])` for tilted view.
 - **Projection**: `mat4.perspective(fovy, aspect, near, far)` fovy adjusts on mouse wheel for zoom.
-- **Combined**: `matViewProj = matProj * matView`; passed as uniform.
+- **Combined**: `matViewProj = matProj * matView` passed as uniform.
 
 ### Lighting
 
