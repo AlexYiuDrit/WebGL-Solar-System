@@ -29,13 +29,13 @@ Data is stored in TypeScript to bypass browser CORS restrictions, with scaled un
 - **Data Structure**: Each body defined by `SphereData` interface with attributes like name, scale, selfRotationSpeed (2π/days for spin), orbitSpeed (2π/days for revolution), and orbitRadius.
 - **Starry Background**: Generated via `createStarVertices()`: Random 3D points normalized to unit vectors, scaled by random radius, and assigned RGB colors for variation.
 - **Sphere Generation**: `getSphereData()` uses parametric equations for vertices and normals:
-[screenshot.jpg](https://alexyiudrit.github.io/WebGL-Solar-System/sphere.png)
+![screenshot.jpg](https://alexyiudrit.github.io/WebGL-Solar-System/sphere.png)
   ```
   x = r * cos(ϕ) * cos(θ)
   y = r * cos(ϕ) * sin(θ)
   z = r * sin(ϕ)
   ```
-[screenshot.jpg](https://alexyiudrit.github.io/WebGL-Solar-System/sector.png)
+![screenshot.jpg](https://alexyiudrit.github.io/WebGL-Solar-System/sector.png)
   Where θ = 2π * i / sectorCount, ϕ = π/2 - π * j / stackCount. Triangulated with indices for two triangles per sector (k1 → k2 → k1+1, k1+1 → k2 → k2+1). Normals = position / radius.
 - **Orbital Movement**: In `Sphere.draw()`:
   - Update `orbitAngle += orbitSpeed * dt` (dt in simulation days).
